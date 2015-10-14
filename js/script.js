@@ -112,18 +112,7 @@ function scan(ignore_warning)
 			}
 			else
 			{
-				var amount = this.responseText.split(':')[1];
-				var warning = "<div class=\"warning\">";
-				warning+="<h2>warning</h2>";
-				warning+="<p>You are about to scan " + amount + " files. ";
-				warning+="Depending on the amount of codelines and includes this may take a while.";
-				warning+="The author of RIPS recommends to scan only the root directory of your project without subdirs.</p>";
-				warning+="<p>Do you want to continue anyway?</p>";	
-				warning+="<input type=\"button\" class=\"Button\" value=\"continue\" onClick=\"scan(true);\"/>&nbsp;";
-				warning+="<input type=\"button\" class=\"Button\" value=\"cancel\" onClick=\"document.getElementById('scanning').style.display='none';\"/>";
-				warning+="</div>";
-				document.getElementById("scanning").style.backgroundImage="none";
-				document.getElementById("scanning").innerHTML=warning;
+            scan(true);
 			}
 			a=false;
 		} 
@@ -213,18 +202,7 @@ function leakScan(hoveritem, varname, line, ignore_warning)
 			}	
 			else
 			{
-				var amount = this.responseText.split(':')[1];
-				var warning = "<div class=\"warning\">";
-				warning+="<h2>warning</h2>";
-				warning+="<p>You are about to scan " + amount + " files. ";
-				warning+="Depending on the amount of codelines and includes this may take a while. ";
-				warning+="The author of RIPS recommends to scan only the root directory of your project without subdirs.</p>";
-				warning+="<p>Do you want to continue anyway?</p>";	
-				warning+="<input type=\"button\" class=\"Button\" value=\"continue\" onClick=\"document.getElementById('dataleakscanning').style.display='none';leakScan(null, '"+varname+"', '"+line+"', true);\"/>&nbsp;";
-				warning+="<input type=\"button\" class=\"Button\" value=\"cancel\" onClick=\"document.getElementById('windowcontent2').removeChild(document.getElementById('dataleakscanning'));closeWindow(2);\"/>";
-				warning+="</div>";
-				document.getElementById("dataleakscanning").style.backgroundImage="none";
-				document.getElementById("dataleakscanning").innerHTML=warning;
+            leakScan(null, varname, line, true);
 			}
 			a=false;
 		} 
