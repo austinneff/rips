@@ -575,6 +575,7 @@ You should have received a copy of the GNU General Public License along with thi
 	// build list of all entry points (user input)
 	function createUserinputList($user_input)
 	{
+      file_put_contents('userinput', print_r($user_input,1));
 		if(!empty($user_input))
 		{
 			ksort($user_input);

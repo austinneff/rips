@@ -33,7 +33,8 @@ final class Sources
 		'$HTTP_SERVER_VARS',
 		'$HTTP_RAW_POST_DATA',
 		'$argc',
-		'$argv'
+		'$argv',
+      'php://input'
 	);
 	
 	public static $V_SERVER_PARAMS = array(
